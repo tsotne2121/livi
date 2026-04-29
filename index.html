@@ -124,7 +124,7 @@ body {
     box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-/* TITLE */
+/* SHINY TITLE */
 
 .title {
     margin-bottom: 24px;
@@ -170,30 +170,40 @@ body {
     margin: 14px 0;
 }
 
+/* READABLE PASTEL TEXT */
+
 .text {
     font-size: 23px;
     font-weight: bold;
     line-height: 1.6;
     word-break: break-word;
+
+    -webkit-text-stroke-width: 0.4px;
+
+    text-shadow:
+        0 1px 2px rgba(0,0,0,0.08);
 }
 
 .text1 {
     color: #ffd4ea;
+    -webkit-text-stroke: 0.4px rgba(180, 60, 120, 0.75);
 }
 
 .text2 {
     color: #eadbff;
+    -webkit-text-stroke: 0.4px rgba(110, 70, 180, 0.75);
 }
 
 .text3 {
     color: #d8eeff;
+    -webkit-text-stroke: 0.4px rgba(60, 110, 180, 0.75);
 }
 
 .final {
     font-size: 21px;
 }
 
-/* MOBILE FIX */
+/* MOBILE VERSION */
 
 @media (max-width: 768px) {
     body {
@@ -230,26 +240,6 @@ body {
     .corner-img {
         width: 70px;
         opacity: 0.85;
-    }
-
-    .top-left {
-        top: 10px;
-        left: 10px;
-    }
-
-    .top-right {
-        top: 10px;
-        right: 10px;
-    }
-
-    .bottom-left {
-        bottom: 10px;
-        left: 10px;
-    }
-
-    .bottom-right {
-        bottom: 10px;
-        right: 10px;
     }
 }
 
@@ -302,7 +292,7 @@ body {
 
 <div class="container">
 
-    <img src="birthday.jpg" alt="Birthday Photo" class="photo">
+    <img src="livi.jpg" alt="Birthday Photo" class="photo">
 
     <div class="title">
         <span>ლ</span><span>ი</span><span>ვ</span><span>ი</span><span>ს</span>
