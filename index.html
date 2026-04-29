@@ -15,7 +15,7 @@
 body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
-    background: linear-gradient(-45deg, #ffb6d9, #d8b4ff, #a5d8ff, #ffcce6);
+    background: linear-gradient(-45deg, #ffb6d9, #d8b4ff, #a5d8ff, #ffd6f5);
     background-size: 400% 400%;
     animation: gradientMove 12s ease infinite;
     display: flex;
@@ -23,6 +23,7 @@ body {
     align-items: center;
     overflow: hidden;
     padding: 20px;
+    position: relative;
 }
 
 @keyframes gradientMove {
@@ -33,66 +34,117 @@ body {
 
 .container {
     text-align: center;
-    background: rgba(255,255,255,0.18);
-    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.22);
+    backdrop-filter: blur(12px);
     padding: 40px 30px;
-    border-radius: 30px;
-    max-width: 650px;
+    border-radius: 35px;
+    max-width: 700px;
     width: 100%;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
     position: relative;
     z-index: 2;
+    border: 4px solid rgba(255,255,255,0.4);
 }
 
 .photo {
-    width: 220px;
-    height: 220px;
+    width: 230px;
+    height: 230px;
     border-radius: 50%;
     object-fit: cover;
-    border: 6px solid white;
+    border: 8px solid white;
     margin-bottom: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
+
+/* Title with dancing letters */
 
 .title {
-    font-size: 42px;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 20px;
-    animation: jiggle 2s ease-in-out infinite;
+    margin-bottom: 25px;
+    line-height: 1.4;
 }
 
-@keyframes jiggle {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(1.5deg); }
-    50% { transform: rotate(0deg); }
-    75% { transform: rotate(-1.5deg); }
-    100% { transform: rotate(0deg); }
+.title span {
+    display: inline-block;
+    font-size: 44px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+    animation: dance 1.6s ease-in-out infinite;
+}
+
+.title span:nth-child(1) { animation-delay: 0s; }
+.title span:nth-child(2) { animation-delay: 0.1s; }
+.title span:nth-child(3) { animation-delay: 0.2s; }
+.title span:nth-child(4) { animation-delay: 0.3s; }
+.title span:nth-child(5) { animation-delay: 0.4s; }
+.title span:nth-child(6) { animation-delay: 0.5s; }
+.title span:nth-child(7) { animation-delay: 0.6s; }
+.title span:nth-child(8) { animation-delay: 0.7s; }
+.title span:nth-child(9) { animation-delay: 0.8s; }
+.title span:nth-child(10) { animation-delay: 0.9s; }
+.title span:nth-child(11) { animation-delay: 1s; }
+.title span:nth-child(12) { animation-delay: 1.1s; }
+.title span:nth-child(13) { animation-delay: 1.2s; }
+.title span:nth-child(14) { animation-delay: 1.3s; }
+.title span:nth-child(15) { animation-delay: 1.4s; }
+
+@keyframes dance {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-6px) rotate(2deg);
+    }
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+    75% {
+        transform: translateY(4px) rotate(-2deg);
+    }
+}
+
+/* Cute text bubbles */
+
+.text-box {
+    background: rgba(255,255,255,0.85);
+    border-radius: 25px;
+    padding: 18px 20px;
+    margin: 16px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 .text {
     font-size: 24px;
-    color: white;
-    margin: 14px 0;
+    font-weight: bold;
     line-height: 1.5;
-    font-weight: 500;
+}
+
+.text1 {
+    color: #ff4fa3;
+}
+
+.text2 {
+    color: #8b5cf6;
+}
+
+.text3 {
+    color: #3b82f6;
 }
 
 .final {
-    margin-top: 18px;
     font-size: 22px;
-    font-weight: bold;
 }
 
-/* Floating stars */
-.star {
+/* Decorations */
+
+.star, .heart, .balloon {
     position: absolute;
     font-size: 28px;
-    animation: floatStar linear infinite;
+    animation: floatUp linear infinite;
     opacity: 0.9;
 }
 
-@keyframes floatStar {
+@keyframes floatUp {
     from {
         transform: translateY(100vh) rotate(0deg);
     }
@@ -104,43 +156,26 @@ body {
 .star:nth-child(1) {
     left: 8%;
     animation-duration: 12s;
-    color: #ff69b4;
 }
 
 .star:nth-child(2) {
     left: 20%;
-    animation-duration: 15s;
-    color: #c084fc;
+    animation-duration: 16s;
 }
 
 .star:nth-child(3) {
-    left: 35%;
-    animation-duration: 11s;
-    color: #60a5fa;
-}
-
-.star:nth-child(4) {
-    left: 50%;
-    animation-duration: 17s;
-    color: #ff69b4;
-}
-
-.star:nth-child(5) {
-    left: 68%;
-    animation-duration: 13s;
-    color: #c084fc;
-}
-
-.star:nth-child(6) {
-    left: 82%;
-    animation-duration: 16s;
-    color: #60a5fa;
-}
-
-.star:nth-child(7) {
-    left: 92%;
+    left: 85%;
     animation-duration: 14s;
-    color: #ff69b4;
+}
+
+.heart {
+    left: 70%;
+    animation-duration: 15s;
+}
+
+.balloon {
+    left: 92%;
+    animation-duration: 18s;
 }
 </style>
 </head>
@@ -149,29 +184,57 @@ body {
 <div class="star">★</div>
 <div class="star">★</div>
 <div class="star">★</div>
-<div class="star">★</div>
-<div class="star">★</div>
-<div class="star">★</div>
-<div class="star">★</div>
+<div class="heart">💖</div>
+<div class="balloon">🎈</div>
 
 <div class="container">
+
     <img src="livi.jpg" alt="Birthday Photo" class="photo">
 
-    <div class="title">ლივის 4 წლის წვეულება</div>
-
-    <div class="text">
-        გამიხარდება თუ ამ მნიშვნელოვან დღეს<br>
-        ჩემთან ერთად გაატარებ
+    <div class="title">
+        <span>ლ</span>
+        <span>ი</span>
+        <span>ვ</span>
+        <span>ი</span>
+        <span>ს</span>
+        <span>&nbsp;</span>
+        <span>4</span>
+        <span>&nbsp;</span>
+        <span>წ</span>
+        <span>ლ</span>
+        <span>ი</span>
+        <span>ს</span>
+        <span>&nbsp;</span>
+        <span>წ</span>
+        <span>ვ</span>
+        <span>ე</span>
+        <span>უ</span>
+        <span>ლ</span>
+        <span>ე</span>
+        <span>ბ</span>
+        <span>ა</span>
     </div>
 
-    <div class="text">
-        8 მაისი • 16:30
+    <div class="text-box">
+        <div class="text text1">
+            გამიხარდება თუ ამ მნიშვნელოვან დღეს<br>
+            ჩემთან ერთად გაატარებ
+        </div>
     </div>
 
-    <div class="text final">
-        მისამართი: ბათუმი მოლი,<br>
-        მე-4 სართული Donaldoland
+    <div class="text-box">
+        <div class="text text2">
+            8 მაისი • 16:30
+        </div>
     </div>
+
+    <div class="text-box">
+        <div class="text text3 final">
+            მისამართი: ბათუმი მოლი,<br>
+            მე-4 სართული Donaldoland
+        </div>
+    </div>
+
 </div>
 
 </body>
