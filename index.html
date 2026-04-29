@@ -104,27 +104,44 @@ body {
 
 /* TITLE */
 
-.title {
-    margin-bottom: 24px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2px;
-}
-
 .title span {
     display: inline-block;
     font-size: 42px;
     font-weight: bold;
-    color: #ff4fa3;
-    text-shadow: 0 3px 10px rgba(255, 105, 180, 0.25);
-    animation: dance 1.6s ease-in-out infinite;
+
+    background: linear-gradient(
+        90deg,
+        #ff4fa3,
+        #ff8ad4,
+        #ffffff,
+        #ff4fa3
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: dance 1.6s ease-in-out infinite, shine 2.5s linear infinite;
+
+    text-shadow:
+        0 0 10px rgba(255, 79, 163, 0.4),
+        0 0 20px rgba(255, 79, 163, 0.3);
+}
+
+/* SHINY MOVING LIGHT EFFECT */
+@keyframes shine {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
 }
 
 @keyframes dance {
     0%,100% { transform: translateY(0); }
     25% { transform: translateY(-5px); }
     75% { transform: translateY(3px); }
+}
+
+    @keyframes shine {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
 }
 
 /* TEXT BOXES */
