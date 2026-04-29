@@ -1,74 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ka">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>You're Invited 🎉</title>
+<title>ლივის 4 წლის წვეულება 🎉</title>
 
 <style>
-body {
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffb6c1, #ffd700);
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ffb6d9, #d8b4ff, #a5d8ff, #ffcce6);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    text-align: center;
-    color: white;
+    overflow: hidden;
+    padding: 20px;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .container {
-    background: rgba(0,0,0,0.35);
-    padding: 40px;
-    border-radius: 20px;
-    max-width: 500px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: 30px;
+    max-width: 650px;
+    width: 100%;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 2;
 }
 
-h1 {
+.photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid white;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.title {
     font-size: 42px;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 20px;
-    margin: 10px 0;
-}
-
-.button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 14px 28px;
-    background: white;
-    color: #ff4f81;
-    text-decoration: none;
-    border-radius: 999px;
     font-weight: bold;
-    transition: 0.3s;
+    color: white;
+    margin-bottom: 20px;
+    animation: jiggle 2s ease-in-out infinite;
 }
 
-.button:hover {
-    transform: scale(1.05);
+@keyframes jiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(1.5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-1.5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.text {
+    font-size: 24px;
+    color: white;
+    margin: 14px 0;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.final {
+    margin-top: 18px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Floating stars */
+.star {
+    position: absolute;
+    font-size: 28px;
+    animation: floatStar linear infinite;
+    opacity: 0.9;
+}
+
+@keyframes floatStar {
+    from {
+        transform: translateY(100vh) rotate(0deg);
+    }
+    to {
+        transform: translateY(-120vh) rotate(360deg);
+    }
+}
+
+.star:nth-child(1) {
+    left: 8%;
+    animation-duration: 12s;
+    color: #ff69b4;
+}
+
+.star:nth-child(2) {
+    left: 20%;
+    animation-duration: 15s;
+    color: #c084fc;
+}
+
+.star:nth-child(3) {
+    left: 35%;
+    animation-duration: 11s;
+    color: #60a5fa;
+}
+
+.star:nth-child(4) {
+    left: 50%;
+    animation-duration: 17s;
+    color: #ff69b4;
+}
+
+.star:nth-child(5) {
+    left: 68%;
+    animation-duration: 13s;
+    color: #c084fc;
+}
+
+.star:nth-child(6) {
+    left: 82%;
+    animation-duration: 16s;
+    color: #60a5fa;
+}
+
+.star:nth-child(7) {
+    left: 92%;
+    animation-duration: 14s;
+    color: #ff69b4;
 }
 </style>
 </head>
 <body>
 
+<div class="star">★</div>
+<div class="star">★</div>
+<div class="star">★</div>
+<div class="star">★</div>
+<div class="star">★</div>
+<div class="star">★</div>
+<div class="star">★</div>
+
 <div class="container">
-    <h1>🎉 You're Invited! 🎉</h1>
+    <img src="birthday.jpg" alt="Birthday Photo" class="photo">
 
-    <p>Join me for my Birthday Party</p>
+    <div class="title">ლივის 4 წლის წვეულება</div>
 
-    <p><strong>Date:</strong> June 15</p>
-    <p><strong>Time:</strong> 8:00 PM</p>
-    <p><strong>Location:</strong> Batumi</p>
+    <div class="text">
+        გამიხარდება თუ ამ მნიშვნელოვან დღეს<br>
+        ჩემთან ერთად გაატარებ
+    </div>
 
-    <p>Let’s celebrate together ✨</p>
+    <div class="text">
+        8 მაისი • 16:30
+    </div>
 
-    <a class="button" href="https://instagram.com/yourusername" target="_blank">
-        RSVP Here
-    </a>
+    <div class="text final">
+        მისამართი: ბათუმი მოლი,<br>
+        მე-4 სართული Donaldoland
+    </div>
 </div>
 
 </body>
