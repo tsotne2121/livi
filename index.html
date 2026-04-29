@@ -74,14 +74,13 @@ body {
 .star:nth-child(12) { left: 92%; font-size: 18px; animation-duration: 13s, 2.3s; }
 
 /* FLOATING EMOJIS */
-.float {
+    .float {
     position: absolute;
     bottom: -50px;
     font-size: 28px;
     z-index: 1;
-    opacity: 0;
-    animation: floatEmoji linear infinite;
-    pointer-events: none;
+    animation: floatEmoji 10s linear infinite;
+    opacity: 0.8;
 }
 
 @keyframes floatEmoji {
@@ -96,25 +95,12 @@ body {
     }
 }
 
-    <script>
-function random(min, max) {
-    return Math.random() * (max - min) + min;
-}
-
-document.querySelectorAll('.float').forEach(el => {
-    // random horizontal position
-    el.style.left = random(0, 100) + "vw";
-
-    // random size
-    el.style.fontSize = random(18, 40) + "px";
-
-    // random speed
-    el.style.animationDuration = random(6, 14) + "s";
-
-    // random delay so they don’t spawn together
-    el.style.animationDelay = random(0, 5) + "s";
-});
-</script>
+/* random positions */
+.float:nth-child(1) { left: 10%; animation-duration: 12s; }
+.float:nth-child(2) { left: 30%; animation-duration: 10s; }
+.float:nth-child(3) { left: 50%; animation-duration: 14s; }
+.float:nth-child(4) { left: 70%; animation-duration: 11s; }
+.float:nth-child(5) { left: 85%; animation-duration: 13s; }
 
 /* DECOR IMAGES */
 
