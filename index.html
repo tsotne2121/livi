@@ -44,29 +44,24 @@ body {
 }
 
 @keyframes floatUp {
-    from {
-        transform: translateY(100vh) rotate(0deg);
-    }
-    to {
-        transform: translateY(-120vh) rotate(360deg);
-    }
+    from { transform: translateY(100vh) rotate(0deg); }
+    to { transform: translateY(-120vh) rotate(360deg); }
 }
 
 .star:nth-child(1) { left: 3%; font-size: 18px; animation-duration: 10s; }
-.star:nth-child(2) { left: 8%; font-size: 24px; animation-duration: 14s; }
-.star:nth-child(3) { left: 14%; font-size: 20px; animation-duration: 12s; }
-.star:nth-child(4) { left: 22%; font-size: 28px; animation-duration: 18s; }
-.star:nth-child(5) { left: 30%; font-size: 22px; animation-duration: 13s; }
-.star:nth-child(6) { left: 38%; font-size: 26px; animation-duration: 16s; }
-.star:nth-child(7) { left: 46%; font-size: 18px; animation-duration: 11s; }
-.star:nth-child(8) { left: 54%; font-size: 24px; animation-duration: 14s; }
-.star:nth-child(9) { left: 62%; font-size: 20px; animation-duration: 17s; }
-.star:nth-child(10) { left: 70%; font-size: 28px; animation-duration: 12s; }
-.star:nth-child(11) { left: 78%; font-size: 24px; animation-duration: 19s; }
-.star:nth-child(12) { left: 86%; font-size: 18px; animation-duration: 13s; }
-.star:nth-child(13) { left: 92%; font-size: 24px; animation-duration: 15s; }
+.star:nth-child(2) { left: 10%; font-size: 26px; animation-duration: 14s; }
+.star:nth-child(3) { left: 18%; font-size: 20px; animation-duration: 12s; }
+.star:nth-child(4) { left: 26%; font-size: 28px; animation-duration: 18s; }
+.star:nth-child(5) { left: 34%; font-size: 22px; animation-duration: 13s; }
+.star:nth-child(6) { left: 42%; font-size: 24px; animation-duration: 16s; }
+.star:nth-child(7) { left: 50%; font-size: 18px; animation-duration: 11s; }
+.star:nth-child(8) { left: 58%; font-size: 26px; animation-duration: 14s; }
+.star:nth-child(9) { left: 66%; font-size: 20px; animation-duration: 17s; }
+.star:nth-child(10) { left: 74%; font-size: 28px; animation-duration: 12s; }
+.star:nth-child(11) { left: 82%; font-size: 24px; animation-duration: 19s; }
+.star:nth-child(12) { left: 90%; font-size: 18px; animation-duration: 13s; }
 
-/* DECORATION IMAGES */
+/* DECOR IMAGES */
 
 .corner-img {
     position: absolute;
@@ -76,25 +71,10 @@ body {
     pointer-events: none;
 }
 
-.top-left {
-    top: 20px;
-    left: 20px;
-}
-
-.top-right {
-    top: 20px;
-    right: 20px;
-}
-
-.bottom-left {
-    bottom: 20px;
-    left: 20px;
-}
-
-.bottom-right {
-    bottom: 20px;
-    right: 20px;
-}
+.top-left { top: 20px; left: 20px; }
+.top-right { top: 20px; right: 20px; }
+.bottom-left { bottom: 20px; left: 20px; }
+.bottom-right { bottom: 20px; right: 20px; }
 
 /* MAIN CARD */
 
@@ -102,7 +82,7 @@ body {
     width: 100%;
     max-width: 720px;
     text-align: center;
-    background: rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.20);
     backdrop-filter: blur(14px);
     padding: 36px 24px;
     border-radius: 32px;
@@ -115,20 +95,17 @@ body {
 .photo {
     width: 220px;
     height: 220px;
-    max-width: 70vw;
-    max-height: 70vw;
     border-radius: 50%;
     object-fit: cover;
-    border: 8px solid white;
+    border: 7px solid white;
     margin-bottom: 24px;
     box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-/* SHINY TITLE */
+/* TITLE */
 
 .title {
     margin-bottom: 24px;
-    line-height: 1.5;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -139,152 +116,81 @@ body {
     display: inline-block;
     font-size: 42px;
     font-weight: bold;
-    color: white;
-    text-shadow:
-        0 0 8px #ff9ad5,
-        0 0 16px #ff9ad5,
-        0 0 24px #ff7fc8,
-        0 0 36px #ff7fc8;
+    color: #ff4fa3;
+    text-shadow: 0 3px 10px rgba(255, 105, 180, 0.25);
     animation: dance 1.6s ease-in-out infinite;
 }
 
 @keyframes dance {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    25% {
-        transform: translateY(-5px) rotate(2deg);
-    }
-    75% {
-        transform: translateY(3px) rotate(-2deg);
-    }
+    0%,100% { transform: translateY(0); }
+    25% { transform: translateY(-5px); }
+    75% { transform: translateY(3px); }
 }
 
 /* TEXT BOXES */
 
 .text-box {
-    background: rgba(255,255,255,0.10);
-    border: 1px solid rgba(255,255,255,0.20);
-    border-radius: 24px;
+    background: rgba(255,255,255,0.12);
+    border-radius: 22px;
     padding: 18px;
     margin: 14px 0;
 }
 
-/* READABLE PASTEL TEXT */
-
 .text {
-    font-size: 23px;
+    font-size: 22px;
     font-weight: bold;
     line-height: 1.6;
-    word-break: break-word;
-
-    -webkit-text-stroke-width: 0.4px;
-
-    text-shadow:
-        0 1px 2px rgba(0,0,0,0.08);
 }
 
-.text1 {
-    color: #ffd4ea;
-    -webkit-text-stroke: 0.4px rgba(180, 60, 120, 0.75);
-}
+/* DARKER PASTEL COLORS (NO STROKE) */
 
-.text2 {
-    color: #eadbff;
-    -webkit-text-stroke: 0.4px rgba(110, 70, 180, 0.75);
-}
-
-.text3 {
-    color: #d8eeff;
-    -webkit-text-stroke: 0.4px rgba(60, 110, 180, 0.75);
-}
+.text1 { color: #c2185b; }   /* pink */
+.text2 { color: #5e35b1; }   /* purple */
+.text3 { color: #1565c0; }   /* blue */
 
 .final {
-    font-size: 21px;
+    font-size: 20px;
 }
 
-/* MOBILE VERSION */
+/* MOBILE */
 
 @media (max-width: 768px) {
-    body {
-        padding: 14px;
-        align-items: flex-start;
-    }
+    body { padding: 14px; align-items: flex-start; }
 
-    .container {
-        padding: 28px 18px;
-        border-radius: 26px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
+    .container { padding: 28px 18px; }
 
-    .photo {
-        width: 180px;
-        height: 180px;
-        border-width: 6px;
-    }
+    .photo { width: 170px; height: 170px; }
 
-    .title span {
-        font-size: 30px;
-    }
+    .title span { font-size: 30px; }
 
-    .text {
-        font-size: 18px;
-        line-height: 1.5;
-    }
-
-    .final {
-        font-size: 17px;
-    }
-
-    .corner-img {
-        width: 70px;
-        opacity: 0.85;
-    }
+    .text { font-size: 18px; }
 }
 
 @media (max-width: 480px) {
-    .title span {
-        font-size: 24px;
-    }
-
-    .text {
-        font-size: 16px;
-    }
-
-    .final {
-        font-size: 15px;
-    }
-
-    .photo {
-        width: 150px;
-        height: 150px;
-    }
-
-    .corner-img {
-        width: 55px;
-    }
+    .title span { font-size: 24px; }
+    .text { font-size: 16px; }
+    .photo { width: 140px; height: 140px; }
 }
 </style>
 </head>
+
 <body>
 
 <!-- STARS -->
-<div class="star">★</div>
-<div class="star">★</div>
-<div class="star">★</div>
-<div class="star">★</div>
-<div class="star">★</div>
-<div class="star">★</div>
-<div class="star">★</div>
-<div class="star">★</div>
-<div class="star">★</div>
-<div class="star">★</div>
-<div class="star">★</div>
-<div class="star">★</div>
-<div class="star">★</div>
+<div class="star">⭐</div>
+<div class="star">✨</div>
+<div class="star">⭐</div>
+<div class="star">✨</div>
+<div class="star">⭐</div>
+<div class="star">✨</div>
+<div class="star">⭐</div>
+<div class="star">✨</div>
+<div class="star">⭐</div>
+<div class="star">✨</div>
+<div class="star">⭐</div>
+<div class="star">✨</div>
 
-<!-- DECORATION IMAGES -->
+<!-- DECOR IMAGES -->
 <img src="star-bear.png" class="corner-img top-left">
 <img src="balloon.png" class="corner-img top-right">
 <img src="cake.png" class="corner-img bottom-left">
@@ -292,35 +198,31 @@ body {
 
 <div class="container">
 
-    <img src="livi.jpg" alt="Birthday Photo" class="photo">
+    <img src="birthday.jpg" class="photo">
 
     <div class="title">
-        <span>ლ</span><span>ი</span><span>ვ</span><span>ი</span><span>ს</span>
-        <span>&nbsp;</span>
-        <span>4</span>
-        <span>&nbsp;</span>
-        <span>წ</span><span>ლ</span><span>ი</span><span>ს</span>
-        <span>&nbsp;</span>
-        <span>წ</span><span>ვ</span><span>ე</span><span>უ</span><span>ლ</span><span>ე</span><span>ბ</span><span>ა</span>
+        <span>🎉 ლ</span><span>ი</span><span>ვ</span><span>ი</span><span>ს</span>
+        <span>🎈 4</span>
+        <span>🎂</span><span>წ</span><span>ლ</span><span>ი</span><span>ს</span>
+        <span>🎊 წ</span><span>ვ</span><span>ე</span><span>უ</span><span>ლ</span><span>ე</span><span>ბ</span><span>ა</span>
     </div>
 
     <div class="text-box">
         <div class="text text1">
-            გამიხარდება თუ ამ მნიშვნელოვან დღეს<br>
-            ჩემთან ერთად გაატარებ
+            💖 გამიხარდება თუ ამ მნიშვნელოვან დღეს<br>
+            ჩემთან ერთად გაატარებ 🎉
         </div>
     </div>
 
     <div class="text-box">
         <div class="text text2">
-            8 მაისი • 16:30
+            🎂 8 მაისი • 16:30 🎈
         </div>
     </div>
 
     <div class="text-box">
         <div class="text text3 final">
-            მისამართი: ბათუმი მოლი,<br>
-            მე-4 სართული Donaldoland
+            📍 ბათუმი მოლი, მე-4 სართული Donaldoland ✨
         </div>
     </div>
 
