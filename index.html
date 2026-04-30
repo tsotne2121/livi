@@ -32,58 +32,18 @@ body {
     100% { background-position: 0% 50%; }
 }
 
+/* 🎊 PARTICLES */
 
-
-/* STARS */
-
-.star {
-    position: absolute;
-    top: 0;
-    color: white;
-    opacity: 0.9;
-    z-index: 1;
+.particle {
+    position: fixed;
+    bottom: -40px;
     pointer-events: none;
-
-    animation: floatUp linear infinite, twinkle 1.8s ease-in-out infinite;
-}
-
-/* floating movement */
-@keyframes floatUp {
-    from { transform: translateY(100vh) rotate(0deg); }
-    to   { transform: translateY(-120vh) rotate(360deg); }
-}
-
-/* soft sparkle effect */
-@keyframes twinkle {
-    0%, 100% { opacity: 0.3; transform: scale(0.9); }
-    50% { opacity: 1; transform: scale(1.3); }
-}
-
-/* random sizes + speeds */
-.star:nth-child(1) { left: 5%; font-size: 18px; animation-duration: 10s, 2s; }
-.star:nth-child(2) { left: 12%; font-size: 26px; animation-duration: 14s, 3s; }
-.star:nth-child(3) { left: 20%; font-size: 20px; animation-duration: 12s, 2.5s; }
-.star:nth-child(4) { left: 28%; font-size: 30px; animation-duration: 18s, 2s; }
-.star:nth-child(5) { left: 36%; font-size: 22px; animation-duration: 13s, 2.8s; }
-.star:nth-child(6) { left: 44%; font-size: 24px; animation-duration: 16s, 2.2s; }
-.star:nth-child(7) { left: 52%; font-size: 18px; animation-duration: 11s, 3s; }
-.star:nth-child(8) { left: 60%; font-size: 26px; animation-duration: 14s, 2.4s; }
-.star:nth-child(9) { left: 68%; font-size: 20px; animation-duration: 17s, 2.6s; }
-.star:nth-child(10) { left: 76%; font-size: 28px; animation-duration: 12s, 2.1s; }
-.star:nth-child(11) { left: 84%; font-size: 24px; animation-duration: 19s, 2.9s; }
-.star:nth-child(12) { left: 92%; font-size: 18px; animation-duration: 13s, 2.3s; }
-
-/* FLOATING EMOJIS */
-    .float {
-    position: absolute;
-    bottom: -50px;
-    font-size: 28px;
     z-index: 1;
-    animation: floatEmoji 10s linear infinite;
-    opacity: 0.8;
+    user-select: none;
+    animation: floatUp linear forwards;
 }
 
-@keyframes floatEmoji {
+@keyframes floatUp {
     0% {
         transform: translateY(0) rotate(0deg);
         opacity: 0;
@@ -95,14 +55,7 @@ body {
     }
 }
 
-/* random positions */
-.float:nth-child(1) { left: 10%; animation-duration: 12s; }
-.float:nth-child(2) { left: 30%; animation-duration: 10s; }
-.float:nth-child(3) { left: 50%; animation-duration: 14s; }
-.float:nth-child(4) { left: 70%; animation-duration: 11s; }
-.float:nth-child(5) { left: 85%; animation-duration: 13s; }
-
-/* DECOR IMAGES */
+/* 💖 CORNER IMAGES */
 
 .corner-img {
     position: absolute;
@@ -110,9 +63,14 @@ body {
     z-index: 1;
     opacity: 0.95;
     pointer-events: none;
+    animation: heartbeat 2s ease-in-out infinite;
+}
 
-    animation: heartbeat 2.2s ease-in-out infinite;
-    transform-origin: center;
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.15); }
 }
 
 .top-left { top: 20px; left: 20px; }
@@ -120,7 +78,7 @@ body {
 .bottom-left { bottom: 20px; left: 20px; }
 .bottom-right { bottom: 20px; right: 20px; }
 
-/* MAIN CARD */
+/* 🎂 CARD */
 
 .container {
     width: 100%;
@@ -143,24 +101,20 @@ body {
     object-fit: cover;
     border: 7px solid white;
     margin-bottom: 24px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-/* TITLE */
+/* 🎉 TITLE */
 
 .title span {
     display: inline-block;
     font-size: 45px;
     font-weight: bold;
     color: #ff4fa3;
-
     text-shadow:
         0 0 6px rgba(255, 79, 163, 0.6),
         0 0 12px rgba(255, 79, 163, 0.4);
-
     animation: dance 1.6s ease-in-out infinite;
 }
-
 
 @keyframes dance {
     0%,100% { transform: translateY(0); }
@@ -168,12 +122,7 @@ body {
     75% { transform: translateY(3px); }
 }
 
-    @keyframes shine {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
-}
-
-/* TEXT BOXES */
+/* 🧁 TEXT */
 
 .text-box {
     background: rgba(255,255,255,0.12);
@@ -188,22 +137,18 @@ body {
     line-height: 1.6;
 }
 
-/* DARKER PASTEL COLORS (NO STROKE) */
-
-.text1 { color: #c2185b; }   /* pink */
-.text2 { color: #5e35b1; }   /* purple */
-.text3 { color: #1565c0; }   /* blue */
+.text1 { color: #c2185b; }
+.text2 { color: #5e35b1; }
+.text3 { color: #1565c0; }
 
 .final {
     font-size: 20px;
 }
 
-/* MOBILE */
+/* 📱 MOBILE */
 
 @media (max-width: 768px) {
-    body { padding: 14px; align-items: flex-start; }
-
-    .container { padding: 28px 18px; }
+    body { align-items: flex-start; }
 
     .photo { width: 170px; height: 170px; }
 
@@ -222,34 +167,7 @@ body {
 
 <body>
 
-<!-- STARS -->
-<div class="star">⭐</div>
-<div class="star">✨</div>
-<div class="star">💫</div>
-<div class="star">⭐</div>
-<div class="star">✨</div>
-<div class="star">💖</div>
-<div class="star">⭐</div>
-<div class="star">✨</div>
-<div class="star">💫</div>
-<div class="star">⭐</div>
-<div class="star">🎉</div>
-<div class="star">✨</div>
-<div class="star">⭐</div>
-<div class="star">💖</div>
-<div class="star">✨</div>
-<div class="star">⭐</div>
-<div class="star">💫</div>
-<div class="star">🎈</div>
-<div class="star">✨</div>
-<div class="star">⭐</div>
-<div class="float">🎈</div>
-<div class="float">💖</div>
-<div class="float">🎉</div>
-<div class="float">🎊</div>
-<div class="float">✨</div>
-
-<!-- DECOR IMAGES -->
+<!-- CORNER DECOR -->
 <img src="heart.png.png" class="corner-img top-left">
 <img src="heart.png.png" class="corner-img top-right">
 <img src="heart.png.png" class="corner-img bottom-left">
@@ -260,13 +178,13 @@ body {
     <img src="liviku.jpg" class="photo">
 
     <div class="title">
-    <span>🎉 ლ</span><span>ი</span><span>ვ</span><span>ი</span>
-    <span>&nbsp;</span>
-    <span>4</span>
-    <span>&nbsp;</span>
-    <span>წ</span><span>ლ</span><span>ი</span><span>ს</span>
-    <span>&nbsp;🎉</span>
-</div>
+        <span>🎉 ლ</span><span>ი</span><span>ვ</span><span>ი</span>
+        <span>&nbsp;</span>
+        <span>4</span>
+        <span>&nbsp;</span>
+        <span>წ</span><span>ლ</span><span>ი</span><span>ს</span>
+        <span>&nbsp;🎉</span>
+    </div>
 
     <div class="text-box">
         <div class="text text1">
@@ -288,6 +206,35 @@ body {
     </div>
 
 </div>
+
+<!-- 🎊 PARTICLE SYSTEM -->
+<script>
+const emojis = ["⭐","✨","💫","💖","🎉","🎊","🎈"];
+
+function createParticle() {
+    const el = document.createElement("div");
+    el.className = "particle";
+
+    el.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+
+    el.style.left = Math.random() * 100 + "vw";
+
+    const size = Math.random() * 20 + 16;
+    el.style.fontSize = size + "px";
+
+    const duration = Math.random() * 5 + 8;
+    el.style.animationDuration = duration + "s";
+
+    document.body.appendChild(el);
+
+    setTimeout(() => {
+        el.remove();
+    }, duration * 1000);
+}
+
+// spawn continuously
+setInterval(createParticle, 250);
+</script>
 
 </body>
 </html>
